@@ -1,0 +1,16 @@
+{
+    "contenidoStr": "{\n  \"name\": \"5.-manejo-de-archivos-en-javascript\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"01. sincronismo.js\",\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n  },\n  \"keywords\": [],\n  \"author\": \"\",\n  \"license\": \"ISC\"\n}\n",
+    "contenidoObj": {
+        "name": "5.-manejo-de-archivos-en-javascript",
+        "version": "1.0.0",
+        "description": "",
+        "main": "01. sincronismo.js",
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1"
+        },
+        "keywords": [],
+        "author": "",
+        "license": "ISC"
+    },
+    "size": 259
+}
