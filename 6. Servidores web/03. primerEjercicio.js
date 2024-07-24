@@ -28,6 +28,6 @@ app.get("/usuario", (req, res) => {
     res.send(nombres);
 })
 
-app.listen("8080", () => {
+app.listen(8080, () => {
     console.log("Servidor en marcha en 8080");
 })

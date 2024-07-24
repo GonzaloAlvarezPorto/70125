@@ -32,8 +32,25 @@ const users = [
     }
 ]
 
+//Esto es con params
 app.get('/usuario/:gender', (req, res) => {
-    const genero = req.query.genero;
+    const genero = req.params.gender;
+
+    if(!genero.toUpperCase()){
+        return res.send({users});
+    }
+    if(genero.toUpperCase() !== "M" && genero.toUpperCase() !== "F"){
+        return res.send({users})
+    }
+
+    const usuariosFiltrados = users.filter(user => user.gender === genero.toUpperCase());
+
+    res.send({users: usuariosFiltrados});
+})
+
+//Esto es con params
+app.get('/usuario_query', (req, res) => {
+    const genero = req.query.gender;
 
     if(!genero.toUpperCase()){
         return res.send({users});
