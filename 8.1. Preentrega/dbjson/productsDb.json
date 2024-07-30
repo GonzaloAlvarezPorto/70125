@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Fanta Naranja",
+    "description": "Gaseosa de Naranja",
+    "code": "0001",
+    "price": 2000,
+    "stock": 95,
+    "category": "Bebida",
+    "id": 1,
+    "status": true
+  }
+]

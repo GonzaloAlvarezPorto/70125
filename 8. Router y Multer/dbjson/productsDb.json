@@ -1,0 +1,42 @@
+[
+	{
+		"title": "Seven Up",
+		"description": "Horrible",
+		"code": "SEV100",
+		"price": 1092,
+		"status": true,
+		"stock": 1002,
+		"category": "nombre",
+		"id": 1000
+	},
+	{
+		"title": "Seven Up",
+		"description": "Horrible",
+		"code": "SEV100",
+		"price": 1092,
+		"status": true,
+		"stock": 1002,
+		"category": "nombre",
+		"id": 1001
+	},
+	{
+		"title": "Seven Up",
+		"description": "Horrible",
+		"code": "SEV100",
+		"price": 1092,
+		"status": true,
+		"stock": 1002,
+		"category": "nombre",
+		"id": 1002
+	},
+	{
+		"title": "Seven Up",
+		"description": "Horrible",
+		"code": "SEV100",
+		"price": 1092,
+		"status": false,
+		"stock": 1002,
+		"category": "nombre",
+		"id": 1004
+	}
+]
