@@ -10,12 +10,18 @@ class CartsManagerFs {
         try {
             if (fs.existsSync(path)) {
                 const cartJson = await fs.promises.readFile(path, 'utf-8');
+
+                if (!cartJson.trim()) {
+                    return [];
+                }
+
                 const cartsJs = JSON.parse(cartJson);
                 return cartsJs;
             }
             return [];
         } catch (error) {
             console.log(error);
+            return [];
         }
     }
 
@@ -28,39 +34,21 @@ class CartsManagerFs {
             console.log(error);
         }
     }
-    getCartById = async (cartId) => {
-        try {
-            const carts = await this.readCarts();
-            const id = parseInt(cartId, 10);
-            if (isNaN(id)) {
-                throw new Error(`El ID ${cartId} no es un número entero válido`);
-            }
-            const cartById = carts.find(cart => cart.id === id);
-            if (!cartById) {
-                throw new Error(`Carrito con ID ${id} no encontrado`);
-            }
-            return cartById;
-        } catch (error) {
-            console.error(`Error al obtener el carrito con ID ${cartId}:`, error);
-            throw error;
-        }
-    }
 
     getCartById = async (cartId) => {
         try {
             const carts = await this.readCarts();
             const id = parseInt(cartId, 10);
             if (isNaN(id)) {
-                throw new Error(`El ID ${cartId} no es un número entero válido`);
+                return (`El ID ${cartId} no es un número entero válido`);
             }
             const cartById = carts.find(cart => cart.id === id);
             if (!cartById) {
-                throw new Error(`Carrito con ID ${id} no encontrado`);
+                return (`Carrito con ID ${id} no encontrado`);
             }
             return cartById;
         } catch (error) {
-            console.error(`Error al obtener el carrito con ID ${cartId}:`, error);
-            throw error;
+            console.log(error);
         }
     }
 
@@ -91,7 +79,7 @@ class CartsManagerFs {
     createProductToCart = async (cartId, productId) => {
         try {
             const carts = await this.readCarts();
-            
+
             const cartIndex = carts.findIndex(cart => cart.id === parseInt(cartId, 10));
 
             if (cartIndex === -1) {

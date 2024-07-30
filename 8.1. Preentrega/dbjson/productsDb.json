@@ -1,22 +1,12 @@
 [
   {
     "title": "Fanta Naranja",
-    "description": "Gaseosa de Naranja",
+    "description": "Bebida de Naranja",
     "code": "0001",
-    "price": 2000,
-    "stock": 95,
-    "category": "Bebida",
+    "price": 3500,
+    "stock": 320,
+    "category": "Refrescos",
     "id": 1,
-    "status": true
-  },
-  {
-    "title": "7-Up",
-    "description": "Gaseosa de lima limón",
-    "code": "0003",
-    "price": 13000,
-    "stock": 125,
-    "category": "Bebida",
-    "id": 3,
     "status": true
   }
 ]

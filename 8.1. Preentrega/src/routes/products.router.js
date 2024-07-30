@@ -14,15 +14,15 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:pid', async (req,res) => {
+router.get('/:pid', async (req, res) => {
     try {
         const { pid } = req.params;
-        const products = await productsManagerFs.getProductById(pid);
-        res.send({status:'success', data: products})
+        const product = await productsManagerFs.getProductById(pid);
+        res.send({ status: 'success', data: product });
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
-})
+});
 
 router.post('/', async (req, res) => {
     try {
@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
 
         const response = await productsManagerFs.createProduct(body);
 
-        res.send({status:'success', data: response})
+        res.send({ status: 'success', data: response })
     } catch (error) {
         console.log(error)
     }
@@ -59,7 +59,10 @@ router.delete('/:pid', async (req, res) => {
 
         if (result) {
             res.send({ status: 'success', message: 'Producto eliminado correctamente' });
-        } 
+        }
+        else{
+            res.send({status:'error', message:'Producto no encontrado'})
+        }
     } catch (error) {
         console.log(error);
     }
