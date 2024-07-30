@@ -8,5 +8,15 @@
     "category": "Bebida",
     "id": 1,
     "status": true
+  },
+  {
+    "title": "7-Up",
+    "description": "Gaseosa de lima limón",
+    "code": "0003",
+    "price": 13000,
+    "stock": 125,
+    "category": "Bebida",
+    "id": 3,
+    "status": true
   }
 ]
