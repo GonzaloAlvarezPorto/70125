@@ -1,0 +1,16 @@
+<div>
+    <h1>Bienvenido {{user.full_name}}</h1>
+    {{#if isAdmin}}
+        {{#each users}}
+            <div>
+                <p>
+                    Nombre: {{this.full_name}} - email: {{this.email}}
+                    <hr>
+                </p>
+            </div>
+        {{/each}}
+        {{else}}
+        <h2>No tienes permisos para ver los usuarios</h2>
+    {{/if}}
+</div>
+<script src="/static/assets/js/javaScript.js"></script>
