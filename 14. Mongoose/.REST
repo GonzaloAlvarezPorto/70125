@@ -1,0 +1,26 @@
+GET http://localhost:8080/api/users
+
+###
+
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+    "first_name":"Gisela Paola",
+    "last_name":"Rapetti",
+    "email":"giselarapetti@gmail.com"
+}
+
+###
+
+PUT http://localhost:8080/api/users/66bed344b06071c6b4ba38fb
+Content-Type: application/json
+
+{
+    "first_name":"Gisela",
+    "last_name":"Rapetti",
+    "email":"giselarapetti@gmail.com"
+}
+
+###
+DELETE http://localhost:8080/api/users/66bed344b06071c6b4ba38fb
