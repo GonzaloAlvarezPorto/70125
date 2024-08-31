@@ -1,0 +1,90 @@
+html{
+    background-color: rgb(24, 43, 24);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    text-align: center;
+    color:white;
+    background-color: green;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    border:2px solid white;
+    min-height: 40px;
+    align-content: center;
+}
+
+h1 {
+    color: white;
+    margin-left: 70px;
+}
+
+input {
+    margin: 10px;
+    border-radius: 5px;
+    border:2px solid rgb(13, 19, 13);
+    padding:10px;
+}
+
+button{
+    background-color: rgb(13, 19, 13);
+    border-radius: 5px;
+    margin: 10px;
+    border:2px solid white;
+    padding: 10px;
+    color:white;
+}
+
+#productosNuevos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#fichaProducto{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: greenyellow;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#fichaProducto h3,#fichaProducto p,#fichaProducto button{
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#fichaProducto h3{
+    background-color: rgb(23, 70, 23);
+    border-radius: 3px;
+    padding: 10px;
+    color: rgb(170, 185, 147);
+}
+
+ul{
+    display: flex;
+    margin: 10px;
+    background-color: green;
+    width: 400px;
+    justify-content: space-between;
+}
+
+ul li {
+    text-decoration: none;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    color: white;
+}
