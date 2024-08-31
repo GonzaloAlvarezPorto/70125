@@ -1,0 +1,25 @@
+#### Productos
+
+GET http://127.0.0.1:8080/api/products
+
+###
+GET http://localhost:8080/api/products/2
+
+###
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+"title":"productos prueba 4",
+    "code": "004",
+    "thumbnail": "Imagen",
+    "price": 88000,
+    "stock": 20,
+    "category": "zapatillas"
+}
+
+###
+PUT http://localhost:8080/api/products/2
+
+###
+DELETE http://localhost:8080/api/products/2
