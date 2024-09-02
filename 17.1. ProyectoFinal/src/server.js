@@ -13,15 +13,12 @@ const CartsManagerMongo = require('./daos/mongo/cartsManager.mongo.js');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-// Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
-// Conectar a la base de datos
 connectDB();
 
-// Configuración del motor de plantillas
 app.engine('handlebars', handlebars.engine({
     runtimeOptions: {
         allowProtoPropertiesByDefault: true,
@@ -31,29 +28,24 @@ app.engine('handlebars', handlebars.engine({
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
 
-// Middleware de registro de tiempo
 app.use((req, res, next) => {
     console.log('Time: ', Date.now());
     next();
 });
 
-// Middleware de manejo de errores
 app.use((error, req, res, next) => {
     console.error(error.stack);
     res.status(500).send('Error de servidor');
 });
 
-// Rutas
 app.use('/', viewsRouter)
 app.use('/products', productsRouter);
 app.use('/carts', cartsRouter);
 
-// Iniciar servidor HTTP
 const httpServer = app.listen(PORT, () => {
     console.log('Escuchando en el puerto:', PORT);
 });
 
-// Configuración de Socket.IO
 const io = new Server(httpServer);
 const productsManager = new ProductsManagerMongo();
 
