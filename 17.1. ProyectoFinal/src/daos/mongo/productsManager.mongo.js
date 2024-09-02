@@ -5,7 +5,7 @@ class ProductsManagerMongo {
         this.model = productModel;
     }
 
-    getProducts = async (filter = {}, sort = {}, limit = 10, skip = 0) => {
+    getProducts = async (filter, sort, limit, skip) => {
         try {
             const products = await this.model.find(filter)
                 .sort(sort)
@@ -16,9 +16,12 @@ class ProductsManagerMongo {
             console.error('Error en getProducts:', error);
         }
     }
+    
 
     getProductById = async (opts) => await this.model.findOne(opts)
     createProduct = async (newProduct) => await this.model.create(newProduct);
+
+    deleteProduct = async (productId) => await this.model.findByIdAndDelete(productId);
 }
 
 module.exports = ProductsManagerMongo;

@@ -22,7 +22,12 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 connectDB();
 
 // Configuración del motor de plantillas
-app.engine('handlebars', handlebars.engine());
+app.engine('handlebars', handlebars.engine({
+    runtimeOptions: {
+        allowProtoPropertiesByDefault: true,
+        allowProtoMethodsByDefault: true
+    }
+}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
 
@@ -39,9 +44,9 @@ app.use((error, req, res, next) => {
 });
 
 // Rutas
-app.use('/', viewsRouter);
-app.use('/api/products', productsRouter);
-app.use('/api/carts', cartsRouter);
+app.use('/', viewsRouter)
+app.use('/products', productsRouter);
+app.use('/carts', cartsRouter);
 
 // Iniciar servidor HTTP
 const httpServer = app.listen(PORT, () => {
