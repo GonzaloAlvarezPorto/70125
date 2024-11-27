@@ -1,4 +1,4 @@
-const { productModel } = require("../../models/products.model");
+import productModel from "../../models/products.model.js";
 
 class ProductsManagerMongo {
     constructor() {
@@ -24,4 +24,4 @@ class ProductsManagerMongo {
     deleteProduct = async (productId) => await this.model.findByIdAndDelete(productId);
 }
 
-module.exports = ProductsManagerMongo;
+export default ProductsManagerMongo;

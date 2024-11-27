@@ -1,8 +1,8 @@
-/*Variables
+// Variables
 
-let -> puede cambiar
-const -> constante
-var -> puede cambiar y es global -----> NO SE USA MÁS
+// let -> puede cambiar
+// const -> constante
+// var -> puede cambiar y es global -----> NO SE USA MÁS
 
 let nombre = "Gonzalo";
 console.log(nombre);
@@ -18,5 +18,4 @@ console.log(edad);
 
 edad++;
 console.log(edad);
-*/
 

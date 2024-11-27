@@ -1,7 +1,13 @@
-const express = require('express');
-const handlebars = require('express-handlebars')
-const appRouter = require('./router/index.js');
-const { connectDB } = require('./config/index.js');
+import express from 'express';
+import handlebars from 'express-handlebars';
+import appRouter from './router/index.js';
+import connectDB from '../src/config/index.js';
+
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 

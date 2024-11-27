@@ -1,12 +1,17 @@
-const express = require('express');
-const viewsRouter = require('./routes/views.router')
-const productsRouter = require('./routes/products.router')
+import express from 'express'
+import viewsRouter from './routes/views.router.js';
+import productsRouter from './routes/products.router.js';
 
-const logger = require('morgan');
-const { uploader } = require('./utils/multer');
-const handlebars = require('express-handlebars');
-const { Server } = require('socket.io');
-const ProductsManagerFs = require('./managers/fileSystem/products.managers');
+import logger from 'morgan'
+import handlebars from 'express-handlebars'
+import { Server } from 'socket.io';
+import ProductsManagerFs from './managers/fileSystem/products.managers.js';
+
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 8080;

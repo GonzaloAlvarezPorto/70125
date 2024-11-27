@@ -1,7 +1,10 @@
-const { connect } = require("mongoose");
-const { cartModel } = require('../models/carts.model')
+// const { connect } = require("mongoose");
+// const { cartModel } = require('../models/carts.model')
 
-exports.connectDB = async () => {
+import { connect } from "mongoose";
+import cartModel from '../models/carts.model.js';
+
+const connectDB = async () => {
     console.log("Base de datos conectada");
     await connect('mongodb://127.0.0.1:27017/c70125')
 
@@ -18,3 +21,5 @@ exports.connectDB = async () => {
 
     console.log(JSON.stringify(cart,null,2))
 }
+
+export default connectDB;

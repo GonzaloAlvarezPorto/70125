@@ -1,14 +1,20 @@
-const express = require('express');
-const userRouter = require('./routes/users.router');
-const productRouter = require('./routes/products.router');
-const cartRouter = require('./routes/carts.router');
-const pruebasRouter = require('./routes/pruebas.router');
-const viewsRouter = require('./routes/views.router');
+import express from 'express';
+import userRouter from './src/routes/users.router.js';
+import productRouter from './src/routes/products.router.js';
+import cartRouter from './src/routes/carts.router.js';
+import pruebasRouter from './src/routes/pruebas.router.js';
+import viewsRouter from './src/routes/views.router.js';
 
-const logger = require('morgan');
-const { uploader } = require('./utils/multer');
-const handlebars = require('express-handlebars');
-const { Server } = require('socket.io');
+import logger from 'morgan'
+import uploader from './src/utils/multer.js';
+import handlebars from 'express-handlebars'
+import { Server } from 'socket.io';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+// Usando import.meta.url para obtener __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 8080;

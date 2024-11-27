@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = './dbjson/productsDb.json'
+import fs from 'fs'
+const path = '../dbjson/productsDb.json'
 
 class ProductsManagerFs {
     constructor() {
@@ -133,4 +133,4 @@ class ProductsManagerFs {
     }
 }
 
-module.exports = ProductsManagerFs;
+export default ProductsManagerFs;

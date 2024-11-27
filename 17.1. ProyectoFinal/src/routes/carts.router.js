@@ -1,6 +1,6 @@
-const { Router } = require('express');
-const CartsManagerMongo = require('../daos/mongo/cartsManager.mongo');
-const { cartModel } = require('../models/carts.model');
+import { Router } from 'express';
+import CartsManagerMongo from '../daos/mongo/cartsManager.mongo.js';
+import cartModel from '../models/carts.model.js';
 
 const router = Router();
 const cartsManager = new CartsManagerMongo();
@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
 router.get('/:cid', async (req, res) => {
     try {
         const { cid } = req.params;
-        const cart = await cartModel.findById(cid).populate('products.id'); 
+        const cart = await cartModel.findById(cid).populate('products.id');
 
         if (!cart) {
             return res.status(404).json({ message: 'Carrito no encontrado' });
@@ -71,7 +71,7 @@ router.delete('/:cid/products/:pid', async (req, res) => {
     try {
         const { cid, pid } = req.params;
         const cart = await cartModel.findById(cid);
-        
+
         if (!cart) {
             return res.status(404).json({ message: 'Carrito no encontrado' });
         }
@@ -152,4 +152,4 @@ router.delete('/:cid', async (req, res) => {
     }
 });
 
-module.exports = router;
+export default router;

@@ -1,5 +1,5 @@
-const { Router } = require('express');
-const ProductsManagerFs = require('../managers/fileSystem/products.managers');
+import { Router } from "express";
+import ProductsManagerFs from "../managers/fileSystem/products.managers.js";
 
 const router = Router();
 
@@ -26,4 +26,4 @@ router.get('/home', (req, res) => {
         });
 });
 
-module.exports = router;
+export default router;

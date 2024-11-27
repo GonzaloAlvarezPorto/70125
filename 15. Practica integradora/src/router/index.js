@@ -1,8 +1,8 @@
-const { Router } = require('express')
-const productRouter = require('./api/products.router.js')
-const cartsRouter = require('./api/carts.router.js')
-const viewsRouter = require('./views.router.js');
-const { uploader } = require('../utils/uploader.js');
+import { Router } from 'express';// const { Router } = require('express')
+import productRouter from './api/products.router.js' // const productRouter = require('./api/products.router.js')
+import cartsRouter from './api/carts.router.js' // const cartsRouter = require('./api/carts.router.js')
+import viewsRouter from './views.router.js' // const viewsRouter = require('./views.router.js');
+import uploader from '../utils/uploader.js' // const { uploader } = require('../utils/uploader.js');
 
 const router = Router();
 
@@ -15,4 +15,4 @@ router.use('/api/products', productRouter)
 router.use('/api/carts', cartsRouter)
 
 
-module.exports = router;
+export default router;

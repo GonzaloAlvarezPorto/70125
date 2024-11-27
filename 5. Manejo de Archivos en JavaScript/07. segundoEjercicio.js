@@ -2,9 +2,9 @@ const fs = require('fs');
 
 const leerPackageJson = async () => {
     try {
-        const contenido = await fs.promises.readFile('./package.json', 'utf-8');
+        const contenido = await fs.promises.readFile('../package.json', 'utf-8');
         const contObj = JSON.parse(contenido);
-        const stats = await fs.promises.stat('./package.json');
+        const stats = await fs.promises.stat('../package.json');
         const info = {
             contenidoStr: contenido,
             contenidoObj: contObj,

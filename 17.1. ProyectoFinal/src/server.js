@@ -1,14 +1,19 @@
-const express = require('express');
-const path = require('path');
-const { Server } = require('socket.io');
-const handlebars = require('express-handlebars');
+import express from 'express';
+import path from 'path'
+import { Server } from 'socket.io';
+import handlebars from 'express-handlebars';
 
-const viewsRouter = require('./routes/views.router');
-const productsRouter = require('./routes/products.router');
-const cartsRouter = require('./routes/carts.router');
-const { connectDB } = require('./config/index.js');
-const ProductsManagerMongo = require('./daos/mongo/productsManager.mongo.js');
-const CartsManagerMongo = require('./daos/mongo/cartsManager.mongo.js');
+import viewsRouter from './routes/views.router.js'; // const viewsRouter = require('./routes/views.router');
+import productsRouter from './routes/products.router.js'; // const productsRouter = require('./routes/products.router');
+import cartsRouter from './routes/carts.router.js';// const cartsRouter = require('./routes/carts.router');
+import connectDB from './config/index.js'; // const { connectDB } = require('./config/index.js');
+import ProductsManagerMongo from './daos/mongo/productsManager.mongo.js'; // const ProductsManagerMongo = require('./daos/mongo/productsManager.mongo.js');
+
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 8080;

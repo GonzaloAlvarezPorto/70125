@@ -1,6 +1,7 @@
-const express = require('express');
-const router = express.Router();
-const ProductsManagerMongo = require('../daos/mongo/productsManager.mongo.js');
+import Router from 'express';
+import ProductsManagerMongo from '../daos/mongo/productsManager.mongo.js';
+
+const router = Router();
 
 const productsManager = new ProductsManagerMongo();
 
@@ -102,4 +103,4 @@ router.delete('/:pid', async (req, res) => {
     }
 });
 
-module.exports = router;
+export default router;

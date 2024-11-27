@@ -1,8 +1,8 @@
-const { cartModel } = require('../../models/carts.model');
+import cartModel from '../../models/carts.model.js';
 
 class CartsManagerMongo {
 
     
 }
     
-module.exports = CartsManagerMongo;
+export default CartsManagerMongo;

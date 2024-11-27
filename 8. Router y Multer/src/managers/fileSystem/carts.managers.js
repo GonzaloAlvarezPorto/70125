@@ -1,5 +1,5 @@
-const fs = require('fs')
-const path = './dbjson/cartsDb.json';
+import fs from 'fs';
+const path = '../dbjson/cartsDb.json';
 
 class CartsManagerFs {
     constructor() {
@@ -30,9 +30,7 @@ class CartsManagerFs {
     }
 
     createCart = async (newCart) => {
-
         try {
-
             const cart = await this.readCarts();
 
             if (cart.length === 0) {
@@ -64,11 +62,12 @@ class CartsManagerFs {
 
     createProductToCart = () => {
         try {
-            
+            // Agregar lógica para agregar productos al carrito si es necesario
         } catch (error) {
             console.log(error);
         }
     }
 }
 
-module.exports = CartsManagerFs;
+// Exportación de la clase como default
+export default CartsManagerFs;

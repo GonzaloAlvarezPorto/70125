@@ -1,4 +1,4 @@
-const { productModel } = require("../../models/products.model")
+import productModel from '../../models/products.model.js'
 
 class ProductManagerMongo {
 
@@ -13,6 +13,4 @@ class ProductManagerMongo {
     updateProduct = async () => {}
 }
 
-module.exports = {
-    ProductManagerMongo
-}
+export default ProductManagerMongo;

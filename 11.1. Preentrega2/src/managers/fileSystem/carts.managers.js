@@ -1,5 +1,5 @@
-const fs = require('fs')
-const path = './dbjson/cartsDb.json';
+import fs from 'fs'
+const path = '../dbjson/cartsDb.json';
 
 class CartsManagerFs {
     constructor() {
@@ -71,4 +71,4 @@ class CartsManagerFs {
     }
 }
 
-module.exports = CartsManagerFs;
+export default CartsManagerFs;

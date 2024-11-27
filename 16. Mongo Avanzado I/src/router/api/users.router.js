@@ -1,5 +1,5 @@
-const { Router } = require('express');
-const { userModel } = require('../../models/users.model');
+import { Router } from 'express';
+import userModel from '../../models/users.model.js';
 
 const router = Router();
 
@@ -48,5 +48,5 @@ router.delete('/:uid', async (req, res) => {
     res.send({status:'success', message:'usuario eliminado'});
 });
 
-//export default router // => type module;
-module.exports = router; // => common js
+export default router // => type module;
+// module.exports = router; // => common js

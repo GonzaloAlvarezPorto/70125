@@ -4,5 +4,11 @@
     "apellido": "Alvarez",
     "edad": 35,
     "curso": "Backend"
+  },
+  {
+    "nombre": "Gonzalo",
+    "apellido": "Alvarez",
+    "edad": 35,
+    "curso": "Backend"
   }
 ]

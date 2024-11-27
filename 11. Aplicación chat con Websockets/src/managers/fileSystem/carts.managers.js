@@ -1,4 +1,4 @@
-const fs = require('fs')
+import fs from 'fs';
 const path = './dbjson/cartsDb.json';
 
 class CartsManagerFs {
@@ -71,4 +71,4 @@ class CartsManagerFs {
     }
 }
 
-module.exports = CartsManagerFs;
+export default CartsManagerFs;

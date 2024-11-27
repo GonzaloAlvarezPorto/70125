@@ -1,4 +1,4 @@
-const { Router } = require('express');
+import { Router } from "express";// const { Router } = require('express');
 
 const router = Router();
 
@@ -13,7 +13,6 @@ const users = [
     { id: '2', full_name: 'user example 2', email: 'user2@gmail.com' },
     { id: '3', full_name: 'user example 3', email: 'user3@gmail.com' },
 ]
-
 
 router.get('/users', (req, res) => {
     const userLogin = {
@@ -47,4 +46,4 @@ router.get('/products', (req, res) => {
     })
 })
 
-module.exports = router;
+export default router;

@@ -1,5 +1,5 @@
-const { Router } = require('express');
-const ProductsManagerFs = require('../managers/fileSystem/products.managers');
+import { Router } from "express";// const { Router } = require('express');
+import ProductsManagerFs from "../managers/fileSystem/products.managers.js";// const ProductsManagerFs = require('../managers/fileSystem/products.managers');
 
 const router = Router();
 
@@ -72,6 +72,4 @@ router.delete('/:pid', async (req, res) => {
     }
 });
 
-
-module.exports = router;
-
+export default router;

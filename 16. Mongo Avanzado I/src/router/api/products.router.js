@@ -1,5 +1,5 @@
-const { Router } = require("express");
-const { ProductManagerMongo } = require("../../daos/MONGO/productsManager.mongo");
+import { Router } from "express";
+import ProductManagerMongo from "../../daos/MONGO/productsManager.mongo.js";
 
 const router = Router();
 const productsService = new ProductManagerMongo()
@@ -51,4 +51,4 @@ router.delete('/:pid', async (req, res) => {
     }
 })
 
-module.exports = router;
+export default router;

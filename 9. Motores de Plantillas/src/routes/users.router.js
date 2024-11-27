@@ -1,5 +1,4 @@
-const { Router } = require('express');
-
+import { Router } from "express";
 const router = Router();
 
 function auth(req, res, next){
@@ -41,5 +40,5 @@ router.delete('/:uid', (req, res) => {
     res.send(nuevaLista);
 });
 
-//export default router // => type module;
-module.exports = router; // => common js
+export default router // => type module;
+// module.exports = router; // => common js

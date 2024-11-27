@@ -1,15 +1,21 @@
-const express = require('express');
-const userRouter = require('./routes/users.router');
-const productRouter = require('./routes/products.router');
-const cartRouter = require('./routes/carts.router');
-const pruebasRouter = require('./routes/pruebas.router');
-const viewsRouter = require('./routes/views.router');
+import express from 'express';//const express = require('express');
+import userRouter from './routes/users.router.js'
+import productRouter from './routes/products.router.js';
+import cartRouter from './routes/carts.router.js';
+import pruebasRouter from './routes/pruebas.router.js';
+import viewsRouter from './routes/views.router.js';
 
-const logger = require('morgan');
-const { uploader } = require('./utils/multer');
-const handlebars = require('express-handlebars');
-const { Server } = require('socket.io');
-const { connectDB } = require('./config');
+import logger from 'morgan'// const logger = require('morgan');
+import uploader from './utils/multer.js'; // const { uploader } = require('./src/utils/multer');
+import handlebars from 'express-handlebars' // const handlebars = require('express-handlebars');
+import { Server } from 'socket.io';// const { Server } = require('socket.io');
+import connectDB from './config/index.js'; // const { connectDB } = require('./src/config');
+
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -38,7 +44,7 @@ app.post('/', uploader.single('myFile'), (req, res) => {
     res.send('archivo subido')
 })
 
-//app.use('/', viewsRouter);
+// app.use('/', viewsRouter);
 app.use('/api/users',userRouter);
 app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter);
